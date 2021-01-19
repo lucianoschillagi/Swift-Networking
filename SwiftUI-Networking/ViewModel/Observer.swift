@@ -63,7 +63,7 @@ class Observer : ObservableObject {
             }
                 
                 // DEBUG
-                print("SWIFT STRUCT ORGANISATION POPULATED ➡️ ", self.users)
+                print("SWIFT STRUCT USER POPULATED ➡️ ", self.users)
         }
     }
 }

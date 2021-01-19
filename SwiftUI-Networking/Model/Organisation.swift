@@ -15,7 +15,4 @@ struct Organisation: Codable, Hashable {
 }
 
 
-struct User: Codable, Hashable {
-    var firstName:String
 
-}

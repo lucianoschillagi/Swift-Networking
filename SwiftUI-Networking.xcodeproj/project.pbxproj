@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C13A7EF25B77C71004C7AC2 /* Organisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13A7EE25B77C71004C7AC2 /* Organisation.swift */; };
+		1C13A7F525B78A4A004C7AC2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13A7F425B78A4A004C7AC2 /* User.swift */; };
 		1C45575D25603B29001046F8 /* logs in Resources */ = {isa = PBXBuildFile; fileRef = 1C45575C25603B29001046F8 /* logs */; };
 		1C45576925607408001046F8 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45576825607408001046F8 /* RemoteImage.swift */; };
 		1CB3F9A5255ED9BC0034DD22 /* SwiftUI_NetworkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3F9A4255ED9BC0034DD22 /* SwiftUI_NetworkingApp.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1C13A7EE25B77C71004C7AC2 /* Organisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organisation.swift; sourceTree = "<group>"; };
+		1C13A7F425B78A4A004C7AC2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1C45575C25603B29001046F8 /* logs */ = {isa = PBXFileReference; lastKnownFileType = text; path = logs; sourceTree = "<group>"; };
 		1C45576825607408001046F8 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1CB3F9A1255ED9BC0034DD22 /* SwiftUI-Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Networking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1C13A7EE25B77C71004C7AC2 /* Organisation.swift */,
+				1C13A7F425B78A4A004C7AC2 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				1CB3F9A7255ED9BC0034DD22 /* ContentView.swift in Sources */,
 				1CB3F9C0255EF5D10034DD22 /* Observer.swift in Sources */,
+				1C13A7F525B78A4A004C7AC2 /* User.swift in Sources */,
 				1CB3F9A5255ED9BC0034DD22 /* SwiftUI_NetworkingApp.swift in Sources */,
 				1C45576925607408001046F8 /* RemoteImage.swift in Sources */,
 				1C13A7EF25B77C71004C7AC2 /* Organisation.swift in Sources */,
