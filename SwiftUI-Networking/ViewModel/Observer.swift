@@ -8,18 +8,34 @@
 import Combine
 import Alamofire
 import SwiftyJSON
+import Foundation
 
 // The View-Model
 class Observer : ObservableObject {
 
-    @Published var organizations = [Organization]()
+    @Published var organisations = [Organisation]()
+    
+    @Published var users = [User]()
   
     init() {
         
         /* Networking 🚀 **************/
         // Alamofire appears here
-        AF.request("https://api.github.com/users/hadley/orgs", method: .get)
+        AF.request("https://fightpandemics.com/api/users/", method: .get)
+            
+            // Validation
             .validate()
+            
+            // URL Description
+            .cURLDescription { description in
+                print("cURLDescription", description)
+            }
+            // Metrics
+            .responseJSON { response in
+                debugPrint("METRICS", response.metrics ?? "")
+            }
+            
+            // Response Data
             .responseData { response in
             
             switch response.result {
@@ -31,18 +47,14 @@ class Observer : ObservableObject {
                     
                     // SwiftyJSON appears here
                     let jsonResponse = JSON(rawData)
-                    
-                    print(jsonResponse)
-                    
-                    // Itera el array de JSONs recibido
-                    // Extrae los valores buscados
-                    // Los almacena en una colección de instancias de la estructura "Organization" (Model)
+
+                    print("json response", jsonResponse)
+
                     for item in jsonResponse {
-                        self.organizations.append(Organization(
-                                                    id: item.1["id"].intValue,
-                                                    name: item.1["login"].stringValue,
-                                                    avatarUrl: item.1["avatar_url"].stringValue,
-                                                    reposUrl: item.1["repos_url"].stringValue))
+                        
+                        self.users.append(User(firstName: item.1["firstName"].stringValue)
+
+                        )
                     }
 
                 // Failure 😦
@@ -51,7 +63,7 @@ class Observer : ObservableObject {
             }
                 
                 // DEBUG
-                print(self.organizations)
+                print("SWIFT STRUCT ORGANISATION POPULATED ➡️ ", self.users)
         }
     }
 }

@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct Organisation: Codable, Hashable {
+    
+    // The organisation's name
+    var name:String
+
+}
+
+
+struct User: Codable, Hashable {
+    var firstName:String
+
+}

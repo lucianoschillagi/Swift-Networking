@@ -14,18 +14,18 @@ struct ContentView: View {
     
     var body: some View { // Subscriptor 👁
         NavigationView {
-            List(observer.organizations) { organization in
+            List(observer.organisations, id: \.self) { organisation in
                 
                 // List Item
                 HStack {
-                    RemoteImage(url: organization.avatarUrl)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30)
-                    Text(organization.name)
+                    //RemoteImage(url: organization.avatarUrl)
+                       // .aspectRatio(contentMode: .fit)
+                      //  .frame(width: 30)
+                    Text(organisation.name)
                 }
                 // End List Item
                 
-            }.navigationBarTitle("Organizations List")
+            }.navigationBarTitle("Organisations List")
         }
     }
 }
