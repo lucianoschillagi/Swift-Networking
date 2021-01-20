@@ -30,13 +30,9 @@ class Observer : ObservableObject {
             .cURLDescription { description in
                 print("cURLDescription", description)
             }
-            // Metrics
-            .responseJSON { response in
-                debugPrint("METRICS", response.metrics ?? "")
-            }
-            
+
             // Response Data
-            .responseData { response in
+            .responseData { [self] response in
             
             switch response.result {
             
@@ -45,17 +41,19 @@ class Observer : ObservableObject {
                     
                     print("RECEIVED VALUE: \(rawData)")
                     
-                    // SwiftyJSON appears here
-                    let jsonResponse = JSON(rawData)
-
-                    print("json response", jsonResponse)
-
-                    for item in jsonResponse {
-                        
-                        self.users.append(User(firstName: item.1["firstName"].stringValue)
-
-                        )
+                    let users = try! JSONDecoder().decode([User].self, from: rawData)
+                    
+                    print("Response: \(users)")
+                    
+                    for user in users {
+                        print(user.firstName)
+                        print("Medical Help?", user.needs.medicalHelp)
+                        print("Other Help?", user.needs.otherHelp)
+                        self.users.append(user)
                     }
+                    
+                    print("FIRST USER NAME", self.users[0].firstName)
+
 
                 // Failure 😦
                 case .failure(let error):

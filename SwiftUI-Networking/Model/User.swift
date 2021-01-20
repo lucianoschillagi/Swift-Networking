@@ -8,6 +8,12 @@
 import Foundation
 
 struct User: Codable, Hashable {
+    
     var firstName:String
-
+    var needs: Needs
+    
+    struct Needs: Codable, Hashable {
+        var medicalHelp: Bool
+        var otherHelp: Bool
+    }
 }

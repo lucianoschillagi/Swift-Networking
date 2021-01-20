@@ -22,6 +22,7 @@ struct ContentView: View {
                        // .aspectRatio(contentMode: .fit)
                       //  .frame(width: 30)
                     Text(user.firstName)
+                    Text(String(user.needs.medicalHelp))
                 }
                 // End List Item
                 
